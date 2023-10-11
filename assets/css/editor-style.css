@@ -1,0 +1,65 @@
+.body {
+    max-width: var(--wp--style--global--content-size, 1180px);
+}
+
+.wp-block-gravity-forms-cover.alignfull, .wp-block-gravity-forms-cover.full {
+    width: auto !important;
+    max-width: 100dvw
+}
+
+.wp-block-gravity-forms-cover {
+    padding-top: 90px;
+}
+
+.wp-block-gravity-forms-cover img {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.wp-block-gravity-forms-cover .wp-block-cover__inner-container {
+    margin-inline: auto;
+    max-width: 1180px;
+}
+
+.wp-block-gravity-forms-cover .wp-block-heading {
+    margin-bottom: 15px;
+    font-size: 48px;
+    font-weight: 400;
+    max-width: unset;
+}
+
+.wp-block-gravity-forms-cover .wp-block-heading ~ p {
+    margin-bottom: 49px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper {
+    background-color: var(--wp-block-gravity-forms-cover--background);
+    padding: 60px 60px 15px;
+}
+
+.wp-block-gravity-forms-cover .gform_heading {
+    text-align: center;
+}
+
+.wp-block-gravity-forms-cover .gform_title {
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+.wp-block-gravity-forms-cover .gform_description:empty {
+    display: none;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper.gravity-theme .gform_footer {
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper.gravity-theme .gform_footer input.gform_button {
+    border-radius: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}

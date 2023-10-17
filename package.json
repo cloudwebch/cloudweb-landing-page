@@ -1,8 +1,9 @@
 {
   "name": "landing-page-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "homepage": "https://github.com/cloudwebch/cloudweb-landing-page.git",
   "scripts": {
     "build": "wp-scripts build --webpack-copy-php",
     "format": "wp-scripts format",

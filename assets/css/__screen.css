@@ -1,0 +1,171 @@
+.cloudweb-landing-page {
+    --site-size: 1180px;
+    --inner-container: 860px;
+}
+
+.cloudweb-landing-page body {
+    overflow-x: hidden;
+}
+
+hr {
+    margin: 0
+}
+
+.site-header .wrap {
+    display: flex;
+}
+
+.site-branding a {
+    display: block;
+}
+
+.site-branding img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+
+.cloudweb-landing-page .wrap, .cloudweb-landing-page .content-area {
+    width: 100%;
+    float: none;
+}
+
+.cloudweb-landing-page .site-content {
+    padding-inline: 5%;
+}
+
+.wrap, .content-area {
+    max-width: var(--site-size);
+    margin-inline: auto;
+}
+
+.wrap .title-area {
+    margin-left: 0;
+}
+
+.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, .cloudweb-landing-page .wp-block-gravity-forms-cover.full {
+    margin-inline: -5dvw;
+    width: auto;
+    max-width: none
+}
+
+body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full {
+    margin-inline: -5dvw;
+    width: auto !important;
+    max-width: 100dvw
+}
+
+.wp-block-gravity-forms-cover {
+    padding-top: 90px;
+}
+
+.wp-block-gravity-forms-cover img {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+.wp-block-gravity-forms-cover .wp-block-cover__inner-container {
+    margin-inline: auto;
+    max-width: var(--inner-container);
+}
+
+.wp-block-gravity-forms-cover .wp-block-heading {
+    margin-bottom: 15px;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.wp-block-gravity-forms-cover .wp-block-heading ~ p {
+    margin-bottom: 49px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.wp-block-gravity-forms-cover .wp-block-heading:empty, .wp-block-gravity-forms-cover .wp-block-heading ~ p:empty {
+    display: none;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper {
+    background-color: var(--wp-block-gravity-forms-cover--background);
+    padding: 33px 5px 33px;
+}
+
+.wp-block-gravity-forms-cover .gform_title {
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper .gfield_description {
+    color: #000;
+    font-size: 38px;
+}
+
+.wp-block-gravity-forms-cover .gform_heading, .wp-block-gravity-forms-cover .gform_wrapper .gfield--type-html, .wp-block-gravity-forms-cover .gform_wrapper .gfield_description {
+    text-align: center;
+}
+
+body .wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 13px;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input + label {
+    background-color: #fff;
+    border: 2px solid #004B88;
+    color: #004B89;
+    margin-inline: 0;
+    padding: 10px;
+    cursor: pointer;
+    min-width: 225px;
+    text-align: center;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input:checked + label, .wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input + label:hover, .wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input + label:focus {
+    color: #fff;
+    background-color: #004B89;
+}
+
+/*.wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox input:checked + label::before{content: '';width: 20px;height: 20px;background-color: #004B88;display: inline-block;margin-right: 10px;}*/
+/*.wp-block-gravity-forms-cover .gform_wrapper .ginput_container_checkbox .gfield_checkbox label{color: #004B89;position: relative;z-index: 1;}*/
+.wp-block-gravity-forms-cover .gform_wrapper .gchoice {
+    position: relative;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+}
+
+.wp-block-gravity-forms-cover .gform-theme--foundation .gfield.gf_list_inline .gfield_checkbox .gchoice, .wp-block-gravity-forms-cover .gform-theme--foundation .gfield.gf_list_inline .gfield_radio .gchoice {
+    padding-inline-end: 0;
+    padding-block-end: 0;
+}
+
+/*.wp-block-gravity-forms-cover .gform_wrapper .gchoice::after{content:'';width: 100%; height:100%;position: absolute;inset:0;background-color: #fff;border:2px solid #004B88;}*/
+.wp-block-gravity-forms-cover .gform_wrapper .gform_footer, .wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer {
+    padding-inline: 5%;
+    margin-block: 24px;
+    justify-content: center;
+}
+
+.wp-block-gravity-forms-cover .gform_wrapper .gform_footer input[type="button"], .wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer input[type="button"] {
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1024px) {
+    body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full {
+        margin-inline: calc(-1 * (100vw - var(--site-size)) / 2) !important;
+    }
+
+    .wp-block-gravity-forms-cover .gform_wrapper {
+        padding-inline: 60px;
+    }
+}

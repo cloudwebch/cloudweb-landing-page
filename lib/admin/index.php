@@ -14,6 +14,7 @@ namespace CloudWeb\LandingPage;
 function load_admin_files() {
 	$files = array(
 		'add-page-template.php',
+		'check-theme-support.php',
 		'enqueue-assets.php',
 		'register-block-patterns.php',
 	);

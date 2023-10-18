@@ -57,7 +57,7 @@ function enqueue_assets() {
 	if ( is_page_template( 'genesis-landing-page.php' ) || is_page_template( 'cloudweb-landing-page.php' ) ) {
 		wp_enqueue_style( 'landing-page-css-handle' );
 		$custom_css = <<<CSS
-		.cloudweb-landing-page body{overflow-x: hidden;}
+		.cloudweb-landing-page{overflow-x: hidden;}
 		hr{margin:0}
 		.site-header .wrap{display:flex;}
 		.site-branding a{display: block;}
@@ -66,15 +66,15 @@ function enqueue_assets() {
 		.cloudweb-landing-page .site-content{padding-inline:5%;}
 		.wrap,.content-area{ max-width:{$site_size}px;margin-inline:auto; }
 		.wrap .title-area{margin-left:0;}
-		.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto;max-width:none}
-		body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto!important;max-width:100dvw}
+		.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto;max-width:none;padding-bottom:100px;}
+		body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto!important;max-width:100dvw;}
 		.wp-block-gravity-forms-cover{padding-top: 90px;}
 		.wp-block-gravity-forms-cover img{-webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));mask-image:gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));}
 		.wp-block-gravity-forms-cover .wp-block-cover__inner-container{margin-inline:auto;max-width: {$inner_container}px;}
 		.wp-block-gravity-forms-cover .wp-block-heading{margin-bottom:15px;font-size:48px;font-weight:400;}
 		.wp-block-gravity-forms-cover .wp-block-heading ~ p{margin-bottom:49px;font-size:25px;font-weight:400;}
 		.wp-block-gravity-forms-cover .wp-block-heading:empty,.wp-block-gravity-forms-cover .wp-block-heading ~ p:empty{display: none;}
-		.wp-block-gravity-forms-cover .gform_wrapper{background-color: var(--wp-block-gravity-forms-cover--background);padding:33px 5px 33px;}
+		.wp-block-gravity-forms-cover .gform_wrapper{background-color: var(--wp-block-gravity-forms-cover--background);padding:33px 5px 33px;box-shadow: 0 7px 8px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.12);}
 		.wp-block-gravity-forms-cover .gform_title{margin-bottom:15px;font-size:38px;}
 		.wp-block-gravity-forms-cover .gform_wrapper .gfield_description{color: #000;font-size:38px;}
 		.wp-block-gravity-forms-cover .gform_heading, .wp-block-gravity-forms-cover .gform_wrapper .gfield--type-html,.wp-block-gravity-forms-cover .gform_wrapper .gfield_description{text-align: center;}
@@ -90,7 +90,7 @@ function enqueue_assets() {
 		.wp-block-gravity-forms-cover .gform_wrapper .gform_footer, .wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer{padding-inline:5%;margin-block:24px;justify-content: center;}
 		.wp-block-gravity-forms-cover .gform_wrapper .gform_footer input[type="button"],.wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer input[type="button"]{border-radius:0;font-size:14px;font-weight:400;}
 		@media screen and (min-width:1280px) {
-			body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline: calc(-1 * (100vw - {$site_size}px) / 2)!important;}
+			body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline: calc(-1 * (100vw - {$site_size}px) / 2)!important;padding-bottom:200px;}
 			.wp-block-gravity-forms-cover .gform_wrapper{padding-inline:60px;}
 		};
 		CSS;

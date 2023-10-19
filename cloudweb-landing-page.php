@@ -4,7 +4,7 @@
  * Description:       Add new template for landing page and new patterns blocks for Gutenberg.
  * Requires at least: 6.3
  * Requires PHP:      8.0
- * Version:           1.0.1
+ * Version:           1.2.0
  * Author:            cloudWEB GmbH
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html

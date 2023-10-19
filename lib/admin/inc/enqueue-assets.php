@@ -70,10 +70,10 @@ function enqueue_assets() {
 		$custom_css = <<<CSS
 		.cloudweb-landing-page{overflow-x: hidden;}
 		hr{margin:0}
-		.cloudweb-landing-page .site-header{background-color: var(--header-background-color);}
+		.cloudweb-landing-page .site-header{background-color: var(--header-background-color);display: block;}
 		.site-header .wrap{display:flex;}
 		.site-branding a{display: block;}
-		.site-branding img{max-width: 180px;width: 100%;height: auto;}
+		.site-branding img{display:block;max-width: 180px;width: 100%;height: auto;}
 		.cloudweb-landing-page .site-title,.cloudweb-landing-page .site-description{clip: rect(0 0 0 0);clip-path: inset(50%);height: 1px;overflow: hidden;position: absolute;white-space: nowrap;width: 1px;}
 		.cloudweb-landing-page .wrap,.cloudweb-landing-page .content-area{width: 100%;float:none;}
 		.cloudweb-landing-page .site-content{padding-inline:5%;}

@@ -25,10 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gutenberg_scripts' );
 
 function gutenberg_scripts() {
-	$asset_file_path  = LANDINGPAGE_PLUGIN_PATH . 'assets/build/js/variations.asset.php';
-	$demo_cover_image = trailingslashit( LANDINGPAGE_PLUGIN_URL ) . 'assets/images/cover-bg.png';
-	if ( file_exists( $asset_file_path ) ) {
-		$assets = require_once $asset_file_path;
+	$variations_asset_file_path = LANDINGPAGE_PLUGIN_PATH . 'assets/build/js/variations.asset.php';
+	$plugin_assets_file_path    = LANDINGPAGE_PLUGIN_PATH . 'assets/build/js/plugin.asset.php';
+	$demo_cover_image           = trailingslashit( LANDINGPAGE_PLUGIN_URL ) . 'assets/images/cover-bg.png';
+	if ( file_exists( $variations_asset_file_path ) ) {
+		$variations_assets = require_once $variations_asset_file_path;
 		wp_enqueue_style(
 			LANDINGPAGE_PLUGIN_TEXT_DOMAIN . '-editor-style',
 			LANDINGPAGE_PLUGIN_URL . 'assets/css/editor-style.css',
@@ -39,13 +40,23 @@ function gutenberg_scripts() {
 		wp_enqueue_script(
 			LANDINGPAGE_PLUGIN_TEXT_DOMAIN . '-blocks',
 			LANDINGPAGE_PLUGIN_ASSETS_URL . 'js/variations.js',
-			$assets['dependencies'],
-			$assets['version'],
+			$variations_assets['dependencies'],
+			$variations_assets['version'],
 			true
 		);
 		wp_localize_script( LANDINGPAGE_PLUGIN_TEXT_DOMAIN . '-blocks', 'l18n_js_landing_page', array(
 			'cover_bg' => $demo_cover_image,
 		) );
+	}
+	if ( file_exists( $plugin_assets_file_path ) ) {
+		$plugin_assets = require_once $plugin_assets_file_path;
+		wp_enqueue_script(
+			LANDINGPAGE_PLUGIN_TEXT_DOMAIN . '-plugin',
+			LANDINGPAGE_PLUGIN_ASSETS_URL . 'js/plugin.js',
+			$plugin_assets['dependencies'],
+			$plugin_assets['version'],
+			true
+		);
 	}
 }
 
@@ -59,13 +70,16 @@ function enqueue_assets() {
 		$custom_css = <<<CSS
 		.cloudweb-landing-page{overflow-x: hidden;}
 		hr{margin:0}
+		.cloudweb-landing-page .site-header{background-color: var(--header-background-color);}
 		.site-header .wrap{display:flex;}
 		.site-branding a{display: block;}
 		.site-branding img{max-width: 180px;width: 100%;height: auto;}
+		.cloudweb-landing-page .site-title,.cloudweb-landing-page .site-description{clip: rect(0 0 0 0);clip-path: inset(50%);height: 1px;overflow: hidden;position: absolute;white-space: nowrap;width: 1px;}
 		.cloudweb-landing-page .wrap,.cloudweb-landing-page .content-area{width: 100%;float:none;}
 		.cloudweb-landing-page .site-content{padding-inline:5%;}
-		.wrap,.content-area{ max-width:{$site_size}px;margin-inline:auto; }
+		.cloudweb-landing-page .site-inner,.cloudweb-landing-page .wrap,.cloudweb-landing-page .content-area{ max-width:{$site_size}px;margin-inline:auto; }
 		.wrap .title-area{margin-left:0;}
+		.cloudweb-landing-page .genesis-responsive-menu{display: none;}
 		.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto;max-width:none;padding-bottom:100px;}
 		body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull,body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline:-5dvw;width:auto!important;max-width:100dvw;}
 		.wp-block-gravity-forms-cover{padding-top: 90px;}
@@ -90,7 +104,7 @@ function enqueue_assets() {
 		.wp-block-gravity-forms-cover .gform_wrapper .gform_footer, .wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer{padding-inline:5%;margin-block:24px;justify-content: center;}
 		.wp-block-gravity-forms-cover .gform_wrapper .gform_footer input[type="button"],.wp-block-gravity-forms-cover .gform_wrapper .gform_page_footer input[type="button"]{border-radius:0;font-size:14px;font-weight:400;}
 		@media screen and (min-width:1280px) {
-			body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline: calc(-1 * (100vw - {$site_size}px) / 2)!important;padding-bottom:200px;}
+			body.cloudweb-landing-page .wp-block-gravity-forms-cover.alignfull, body.cloudweb-landing-page .wp-block-gravity-forms-cover.full{margin-inline: calc(-100vw / 2 + 100% / 2);padding-bottom:200px;}
 			.wp-block-gravity-forms-cover .gform_wrapper{padding-inline:60px;}
 		};
 		CSS;

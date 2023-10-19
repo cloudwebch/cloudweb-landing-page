@@ -28,6 +28,9 @@ module.exports = {
     'js/variations': [
       path.resolve(process.cwd(), 'src/blocks/variations', 'index.js'),
     ],
+    'js/plugin':     [
+      path.resolve(process.cwd(), 'src/plugin', 'index.js'),
+    ],
   },
   plugins:       [...defaultConfig.plugins, ...themePlugins],
   externalsType: 'global',

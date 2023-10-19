@@ -13,6 +13,7 @@ namespace CloudWeb\LandingPage;
 
 function load_admin_files() {
 	$files = array(
+		'register-meta-data.php',
 		'add-page-template.php',
 		'check-theme-support.php',
 		'enqueue-assets.php',

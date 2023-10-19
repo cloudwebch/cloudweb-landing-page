@@ -63,3 +63,12 @@
     font-size: 14px;
     font-weight: 400;
 }
+
+.landing-page-settings .components-panel__body-toggle.components-button {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.landing-page-settings .components-panel__body-toggle.components-button .components-panel__icon {
+    margin-left: 20px;
+}

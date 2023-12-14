@@ -45,34 +45,6 @@ function plugin_init() {
 			),
 		)
 	);
-
-	// Register the post meta field the meta box will save to.
-//	register_post_meta(
-//		'',
-//		'_landing_page_logo',
-//		array(
-//			'show_in_rest'      => true,
-//			'single'            => true,
-//			'type'              => 'integer',
-//			'sanitize_callback' => 'absint',
-//			'auth_callback'     => function ( $allowed, $meta_key, $post_id, $user_id, $cap, $caps ) {
-//				return current_user_can( 'edit_post', $post_id );
-//			}
-//		)
-//	);
-//	register_post_meta(
-//		'',
-//		'_landing_page_bg',
-//		array(
-//			'show_in_rest'      => true,
-//			'single'            => true,
-//			'type'              => 'string',
-//			'sanitize_callback' => 'absint',
-//			'auth_callback'     => function ( $allowed, $meta_key, $post_id, $user_id, $cap, $caps ) {
-//				return current_user_can( 'edit_post', $post_id );
-//			}
-//		)
-//	);
 }
 
 add_action( 'init', __NAMESPACE__ . '\plugin_init' );

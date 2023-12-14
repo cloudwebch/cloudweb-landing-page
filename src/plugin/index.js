@@ -14,7 +14,6 @@ import {
   BaseControl,
   ColorPicker,
   __experimentalHStack as HStack,
-  __experimentalText as Text,
   DropZone,
   withNotices, PanelBody, PanelRow, Panel, Icon,
 } from '@wordpress/components'

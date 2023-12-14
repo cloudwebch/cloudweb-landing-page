@@ -5,14 +5,12 @@
  * @package CloudWeb\LandingPage
  * @since 1.0.0
  */
-//d( get_option( 'cloudweb-landing-page-settings_data' ) );
+
 $inline_style        = '';
 $cloudweb_lp_options = get_option( 'cloudweb-landing-page-settings_data' );
 $logo_id             = $cloudweb_lp_options['_logo'];
 $logo_img            = $cloudweb_lp_options['_logo'] ? wp_get_attachment_image( $logo_id, 'full' ) : get_custom_logo();
-//$logo_url            = wp_get_attachment_image_url( $logo_id, 'full' );
-//$logo_alt            = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
-$background_color = $cloudweb_lp_options['_bg_color'];
+$background_color    = $cloudweb_lp_options['_bg_color'];
 
 if ( $background_color ) {
 	$inline_style = sprintf( 'style="--header-background-color: %s;"', $background_color );
